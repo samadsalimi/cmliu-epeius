@@ -1,6 +1,10 @@
 # Cloudflare Worker 2 Trojan & Sub
 这是一个基于 Cloudflare Worker 平台的脚本，在原版的基础上修改了显示 Trojan 配置信息转换为订阅内容。使用该脚本，你可以方便地将 Trojan 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。
 
+- **一步到位**部署视频教程：https://youtu.be/MBlAqYajVSY ***小白必看 一步到胃 最佳推荐!!!***
+- **自制优选**订阅视频教程：https://youtu.be/jOhq3QpXG_I *折腾自己的专属订阅*
+- **进阶使用**技巧视频教程：https://youtu.be/0Cd8uTNJj1Q *然后成为折腾的王*
+
 Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 
 # 免责声明
@@ -26,7 +30,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 - 通过提交虚假的节点配置给订阅服务，避免节点配置信息泄露。
 - 另外，您也可以选择自行部署 [WorkerVless2sub 订阅生成服务](https://github.com/cmliu/WorkerVless2sub)，这样既可以利用订阅生成器的便利。
 
-## Workers 部署方法 [视频教程](https://youtu.be/MBlAqYajVSY)
+## Workers 部署方法 [视频教程](https://www.youtube.com/watch?v=MBlAqYajVSY&t=169s)
 1. 部署 Cloudflare Worker：
    - 在 Cloudflare Worker 控制台中创建一个新的 Worker。
    - 将 [worker.js](https://github.com/cmliu/epeius/blob/main/_worker.js) 的内容粘贴到 Worker 编辑器中。
@@ -95,7 +99,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
      您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
    - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `epeius.pages.dev` 后，点击 `激活域`即可。
 
-## Pages GitHub 部署方法
+## Pages GitHub 部署方法 [视频教程](https://www.youtube.com/watch?v=0Cd8uTNJj1Q&t=96s)
 1. 部署 Cloudflare Pages：
    - 在 Github 上先 Fork 本项目，并点上 Star !!!
    - 在 Cloudflare Pages 控制台中选择 `连接到 Git`后，选中 `epeius`项目后点击 `开始设置`。
