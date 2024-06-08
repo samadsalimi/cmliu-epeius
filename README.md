@@ -7,9 +7,6 @@
 
 Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 
-# 开源
-我很抱歉因为特殊原因，只能给[关键源码](https://github.com/cmliu/epeius/blob/237bc316dd0d0cbfd90e0118354363eb5742a2e4/_worker.src.js#L366)进行了混淆，以起到保护项目的目的。如果你是开发者需要源码，可以通过TG联系我将源码发给你。
-
 # 免责声明
 
 本免责声明适用于 GitHub 上的 “epeius” 项目（以下简称“该项目”），项目链接为：https://github.com/cmliu/epeius
