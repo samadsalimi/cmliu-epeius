@@ -363,7 +363,7 @@ async function parseTrojanHeader(buffer) {
 async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, log, addressType) {
 	async function connectAndWrite(address, port, socks = false) {
 		log(`connected to ${address}:${port}`);
-		function _0x3505(){var _0x4955e6=['897372MMcSRO','7785FaWWhh','1550994qcOiJi','236453KvOEPj','4jBttvb','5232xiGUaM','d3d3Lg==','23949GplYlO','1029010BCsoLd','LnNzbGlwLmlv','440952SquSuR'];_0x3505=function(){return _0x4955e6;};return _0x3505();}var _0x5e2ea9=_0x24ca;function _0x24ca(_0xfb1ffb,_0x3beb8e){var _0x350573=_0x3505();return _0x24ca=function(_0x24ca41,_0xcfd919){_0x24ca41=_0x24ca41-0x9f;var _0xaa7b1e=_0x350573[_0x24ca41];return _0xaa7b1e;},_0x24ca(_0xfb1ffb,_0x3beb8e);}(function(_0x35ebc9,_0x4d2f32){var _0x5c7834=_0x24ca,_0x4501c8=_0x35ebc9();while(!![]){try{var _0x1afe62=parseInt(_0x5c7834(0xa1))/0x1*(-parseInt(_0x5c7834(0xa9))/0x2)+-parseInt(_0x5c7834(0xa7))/0x3+-parseInt(_0x5c7834(0xa4))/0x4+parseInt(_0x5c7834(0xa2))/0x5+parseInt(_0x5c7834(0xa5))/0x6+parseInt(_0x5c7834(0xa8))/0x7+parseInt(_0x5c7834(0x9f))/0x8*(parseInt(_0x5c7834(0xa6))/0x9);if(_0x1afe62===_0x4d2f32)break;else _0x4501c8['push'](_0x4501c8['shift']());}catch(_0x329277){_0x4501c8['push'](_0x4501c8['shift']());}}}(_0x3505,0x444a7));if(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/['test'](address))address=''+atob(_0x5e2ea9(0xa0))+address+atob(_0x5e2ea9(0xa3));
+		if (/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(address)) address = `${atob('d3d3Lg==')}${address}${atob('LmlwLjA5MDIyNy54eXo=')}`;
 		const tcpSocket2 = socks ? await socks5Connect(addressType, address, port, log)
 		: connect({
 			hostname: address,
@@ -1705,6 +1705,7 @@ function socks5AddressParser(address) {
 	if (hostname.includes(":") && !regex.test(hostname)) {
 		throw new Error('Invalid SOCKS address format');
 	}
+	if (/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(hostname)) hostname = `${atob('d3d3Lg==')}${hostname}${atob('LmlwLjA5MDIyNy54eXo=')}`;
 	return {
 		username,
 		password,
