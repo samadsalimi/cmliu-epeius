@@ -610,11 +610,11 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 			if (!proxyIP || proxyIP =='') {
 				订阅器 = '您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP为空, 推荐您设置 proxyIP/PROXYIP ！！！';
 			} else {
-				订阅器 = `您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP： ${proxyIPs.join(', ')}`;
+				订阅器 = `您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP: ${proxyIPs.join(', ')}`;
 			}
 		} else if (RproxyIP != 'true'){
-			if (enableSocks) 订阅器 += `, 当前使用的Socks5： ${parsedSocks5Address.hostname}:${String(parsedSocks5Address.port)}`;
-			else 订阅器 += `, 当前使用的ProxyIP： ${proxyIPs.join(', ')}`;
+			if (enableSocks) 订阅器 += `, 当前使用的Socks5: ${parsedSocks5Address.hostname}:${String(parsedSocks5Address.port)}`;
+			else 订阅器 += `, 当前使用的ProxyIP: ${proxyIPs.join(', ')}`;
 		}
 		return `
 ################################################################
