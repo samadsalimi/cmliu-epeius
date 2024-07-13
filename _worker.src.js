@@ -21,7 +21,7 @@ let addresses = [
 ];
 
 let sub = ''; 
-let subconverter = 'url.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假节点信息防泄露
+let subconverter = 'subapi-loadbalancing.pages.dev';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假节点信息防泄露
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
 
@@ -797,6 +797,16 @@ function subAddresses(host,pw,userAgent,newAddressesapi,newAddressescsv) {
 			address = match[1];
 			port = match[2] || port;
 			addressid = match[3] || address;
+		}
+
+		const httpsPorts = ["2053","2083","2087","2096","8443"];
+		if (!isValidIPv4(address) && port == "443") {
+			for (let httpsPort of httpsPorts) {
+				if (address.includes(httpsPort)) {
+					port = httpsPort;
+					break;
+				}
+			}
 		}
 		
 		let 伪装域名 = host ;
@@ -1737,4 +1747,9 @@ function socks5AddressParser(address) {
 		hostname,
 		port,
 	}
+}
+
+function isValidIPv4(address) {
+	const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+	return ipv4Regex.test(address);
 }
