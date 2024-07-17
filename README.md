@@ -146,7 +146,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 | DLS | 8 | `ADDCSV`测速结果满足速度下限 | 
 | TGTOKEN | 6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA | 发送TG通知的机器人token | 
 | TGID | 6946912345 | 接收TG通知的账户数字ID | 
-| SUB | trojan.fxxk.dedyn.io | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
+| SUB | Trojan.fxxk.dedyn.io | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
 | SUBAPI | subapi.fxxk.dedyn.io | clash、singbox等 订阅转换后端 |
 | SUBCONFIG | [https://raw.github.../ACL4SSR_Online_Mini.ini](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini) | clash、singbox等 订阅转换配置文件 |
 | SUBNAME | epeius | 订阅名称 | 
@@ -169,7 +169,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 - 快速更换订阅器为`VLESS.fxxk.dedyn.io`的订阅地址
 
    ```url
-   https://edgetunnel.pages.dev/90cd4a77-141a-43c9-991b-08263cfe9c10?sub=VLESS.fxxk.dedyn.io
+   https://epeius.pages.dev/auto?sub=Trojan.fxxk.dedyn.io
    ```
 
 **该项目部署的节点可通过节点PATH(路径)的方式，使用指定的`PROXYIP`或`SOCKS5`！！！**
