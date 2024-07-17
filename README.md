@@ -165,7 +165,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 ## 实用小技巧
 
 **该项目部署的订阅可通过添加`sub`键值快速更换优选订阅生成器！** 
-> 例如 `https://edgetunnel.pages.dev/90cd4a77-141a-43c9-991b-08263cfe9c10` 是你的通用自适应订阅地址
+> 例如 `https://epeius.pages.dev/auto` 是你的通用自适应订阅地址
 - 快速更换订阅器为`Trojan.fxxk.dedyn.io`的订阅地址
 
    ```url
