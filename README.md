@@ -5,7 +5,7 @@
 - **自制优选**订阅视频教程：https://youtu.be/jOhq3QpXG_I *折腾自己的专属订阅*
 - **进阶使用**技巧视频教程：https://youtu.be/0Cd8uTNJj1Q *然后成为折腾的王*
 
-Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networks](https://alicenetworks.net/)提供的云服务器维持[CM订阅转换服务](https://sub.fxxk.dedyn.io/)！**
+Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networks](https://alice.ws/aff.php?aff=15)提供的云服务器维持[CM订阅转换服务](https://sub.fxxk.dedyn.io/)！**
 
 # 免责声明
 
@@ -164,7 +164,15 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 
 ## 实用小技巧
 
-**该项目部署的节点可通过节点PATH(路径)的方式，使用指定的`PROXYIP`或`SOCKS5`!!!**
+**该项目部署的订阅可通过添加`sub`键值快速更换优选订阅生成器！** 
+> 例如 `https://edgetunnel.pages.dev/90cd4a77-141a-43c9-991b-08263cfe9c10` 是你的通用自适应订阅地址
+- 快速更换订阅器为`VLESS.fxxk.dedyn.io`的订阅地址
+
+   ```url
+   https://edgetunnel.pages.dev/90cd4a77-141a-43c9-991b-08263cfe9c10?sub=VLESS.fxxk.dedyn.io
+   ```
+
+**该项目部署的节点可通过节点PATH(路径)的方式，使用指定的`PROXYIP`或`SOCKS5`！！！**
 
 - 指定 `PROXYIP` 案例
    ```url
@@ -185,4 +193,4 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 [![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
 
 # 感谢
-[ca110us](https://github.com/ca110us/epeius)、[xream](https://github.com/xream)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、<a href="https://alicenetworks.net/"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" width="150" height="75" alt="Alice Networks LTD"/></a>，
+[ca110us](https://github.com/ca110us/epeius)、[xream](https://github.com/xream)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、<a href="https://alice.ws/aff.php?aff=15"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" width="150" height="75" alt="Alice Networks LTD"/></a>、
