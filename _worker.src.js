@@ -676,8 +676,8 @@ https://github.com/cmliu/epeius
 
 		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
 		let isBase64 = true;
-		let newAddressesapi;
-		let newAddressescsv;
+		let newAddressesapi = [];
+		let newAddressescsv = [];
 
 		if (!sub || sub == "") {
 			if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
