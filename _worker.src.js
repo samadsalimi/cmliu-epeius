@@ -1,4 +1,4 @@
-// worker.src.js
+// _worker.src.js
 import { connect } from "cloudflare:sockets";
 let password = 'auto';
 let proxyIP = '';
@@ -21,8 +21,9 @@ let addresses = [
 ];
 
 let sub = ''; 
-let subconverter = 'subapi-loadbalancing.pages.dev';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假节点信息防泄露
+let subconverter = 'SUBAPI.fxxk.dedyn.io';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假节点信息防泄露
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
+let subProtocol = 'https';
 let RproxyIP = 'false';
 
 let addressesapi = [];
@@ -90,6 +91,12 @@ export default {
 			sub = env.SUB || sub;
 			if (url.searchParams.has('sub') && url.searchParams.get('sub') !== '') sub = url.searchParams.get('sub');
 			subconverter = env.SUBAPI || subconverter;
+			if( subconverter.includes("http://") ){
+				subconverter = subconverter.split("//")[1];
+				subProtocol = 'http';
+			} else {
+				subconverter = subconverter.split("//")[1] || subconverter;
+			}
 			subconfig = env.SUBCONFIG || subconfig;
 			FileName = env.SUBNAME || FileName;
 			RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
@@ -669,8 +676,8 @@ https://github.com/cmliu/epeius
 
 		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
 		let isBase64 = true;
-		let newAddressesapi;
-		let newAddressescsv;
+		let newAddressesapi = [];
+		let newAddressescsv = [];
 
 		if (!sub || sub == "") {
 			if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
@@ -704,13 +711,13 @@ https://github.com/cmliu/epeius
 
 		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
 			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash'))) {
-				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				url = `${subProtocol}://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
 			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
-				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				url = `${subProtocol}://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
 			} else if (userAgent.includes('surge') || _url.searchParams.has('surge')) {
-				url = `https://${subconverter}/sub?target=surge&ver=4&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false`;
+				url = `${subProtocol}://${subconverter}/sub?target=surge&ver=4&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false`;
 				isBase64 = false;
 			}
 		}
@@ -727,10 +734,10 @@ https://github.com/cmliu/epeius
 				content = await response.text();
 			}
 
-			if (!_url.pathname.includes(`/${fakeUserID}`)) {
-				content = revertFakeInfo(content, password, hostName, isBase64);
-				if (userAgent.includes('surge') || _url.searchParams.has('surge')) content = surge(content, `https://${hostName}/${password}?surge`);	
-			} 
+			if (_url.pathname == `/${fakeUserID}`) return content;
+			
+			content = revertFakeInfo(content, password, hostName, isBase64);
+			if (userAgent.includes('surge') || _url.searchParams.has('surge')) content = surge(content, `https://${hostName}/${password}?surge`);	
 			return content;
 		} catch (error) {
 			console.error('Error fetching content:', error);
@@ -909,8 +916,7 @@ async function getAddressescsv(tls) {
 			// 检查CSV头部是否包含必需字段
 			const header = lines[0].split(',');
 			const tlsIndex = header.indexOf('TLS');
-			const speedIndex = header.length - 1; // 最后一个字段
-		
+			
 			const ipAddressIndex = 0;// IP地址在 CSV 头部的位置
 			const portIndex = 1;// 端口在 CSV 头部的位置
 			const dataCenterIndex = tlsIndex + 1; // 数据中心是 TLS 的后一个字段
@@ -923,7 +929,7 @@ async function getAddressescsv(tls) {
 			// 从第二行开始遍历CSV行
 			for (let i = 1; i < lines.length; i++) {
 				const columns = lines[i].split(',');
-		
+				const speedIndex = columns.length - 1; // 最后一个字段
 				// 检查TLS是否为"TRUE"且速度大于DLS
 				if (columns[tlsIndex].toUpperCase() === tls && parseFloat(columns[speedIndex]) > DLS) {
 					const ipAddress = columns[ipAddressIndex];
