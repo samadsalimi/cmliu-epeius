@@ -5,7 +5,7 @@
 - **自制优选**订阅视频教程：https://youtu.be/jOhq3QpXG_I *折腾自己的专属订阅*
 - **进阶使用**技巧视频教程：https://youtu.be/0Cd8uTNJj1Q *然后成为折腾的王*
 
-Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networks](https://alice.ws/aff.php?aff=15)提供的云服务器维持[CM订阅转换服务](https://sub.fxxk.dedyn.io/)！**
+Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networks](https://url.cmliussss.com/alice)提供的云服务器维持[CM订阅转换服务](https://sub.fxxk.dedyn.io/)！**
 
 # 免责声明
 
@@ -43,7 +43,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
      	//当sub为空时启用本地优选域名/优选IP
      	'www.visa.com.sg#官方优选域名',
      	'www.wto.org:8443#官方优选域名',
-     	'www.csgo.com:2087',
+     	'visa.cn:2087',
      	'icook.hk',
      ];
      ```
@@ -74,12 +74,12 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 2. 添加优选线路:
  - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
    ```
-   cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
-   time.is#你可以只放域名 如下
+   12315.cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
+   visa.cn#你可以只放域名 如下
    www.visa.com.sg
-   skk.moe#也可以放域名带端口 如下
+   time.is#也可以放域名带端口 如下
    www.wto.org:8443
-   www.csgo.com:2087#节点名放在井号之后即可
+   chatgpt.com:2087#节点名放在井号之后即可
    icook.hk#若不带端口号默认端口为443
    104.17.152.41#IP也可以
    [2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK
@@ -109,12 +109,12 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 2. 添加优选线路:
  - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
    ```
-   cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
-   time.is#你可以只放域名 如下
+   12315.cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
+   visa.cn#你可以只放域名 如下
    www.visa.com.sg
-   skk.moe#也可以放域名带端口 如下
+   time.is#也可以放域名带端口 如下
    www.wto.org:8443
-   www.csgo.com:2087#节点名放在井号之后即可
+   chatgpt.com:2087#节点名放在井号之后即可
    icook.hk#若不带端口号默认端口为443
    104.17.152.41#IP也可以
    [2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK
@@ -137,24 +137,24 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 ## 变量说明
 | 变量名 | 示例 | 备注 |
 |--------|---------|-----|
-| PASSWORD | auto | 可以取任意值 |
-| PROXYIP | proxyip.fxxk.dedyn.io | 备选作为访问CFCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
-| SOCKS5  | user:password@127.0.0.1:1080 | 优先作为访问CFCDN站点的SOCKS5代理 |
-| ADD | www.csgo.com:2087,icook.hk | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
+| PASSWORD | `auto` | 可以取任意值 |
+| PROXYIP | `proxyip.fxxk.dedyn.io` | 备选作为访问CFCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
+| SOCKS5  | `user:password@127.0.0.1:1080` | 优先作为访问CFCDN站点的SOCKS5代理(支持多socks5, socks5之间使用`,`或 换行 作间隔) |
+| ADD | `www.csgo.com:2087,icook.hk` | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
 | ADDAPI | [https://raw.github.../addressesapi.txt](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt) | 不解释, 懂得都懂 |
 | ADDCSV | [https://raw.github.../addressescsv.csv](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv) | 不解释, 懂得都懂 |
-| DLS | 8 | `ADDCSV`测速结果满足速度下限 | 
-| TGTOKEN | 6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA | 发送TG通知的机器人token | 
-| TGID | 6946912345 | 接收TG通知的账户数字ID | 
-| SUB | Trojan.fxxk.dedyn.io | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
-| SUBAPI | subapi.fxxk.dedyn.io | clash、singbox等 订阅转换后端 |
+| DLS | `8` | `ADDCSV`测速结果满足速度下限 | 
+| TGTOKEN | `6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA` | 发送TG通知的机器人token | 
+| TGID | `6946912345` | 接收TG通知的账户数字ID | 
+| SUB | `Trojan.fxxk.dedyn.io` | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
+| SUBAPI | `SUBAPI.fxxk.dedyn.io` | clash、singbox等 订阅转换后端 |
 | SUBCONFIG | [https://raw.github.../ACL4SSR_Online_Mini.ini](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini) | clash、singbox等 订阅转换配置文件 |
-| SUBNAME | epeius | 订阅名称 | 
-| RPROXYIP | false | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
-| URL302 | https://t.me/CMLiussss | 主页302跳转(支持多url, url之间使用`,`或 换行 作间隔, 小白别用) |
-| URL | https://t.me/CMLiussss | 主页伪装(支持多url, url之间使用`,`或 换行 作间隔, 乱设容易触发反诈) |
-| CFEMAIL | admin@gmail.com | CF账户邮箱(与`CFKEY`都填上后, 订阅信息将显示请求使用量, 小白别用) | 
-| CFKEY | c6a944b5c956b6c18c2352880952bced8b85e | CF账户Global API Key(与`CFEMAIL`都填上后, 订阅信息将显示请求使用量, 小白别用) |
+| SUBNAME | `epeius` | 订阅名称 | 
+| RPROXYIP | `false` | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
+| URL302 | `https://t.me/CMLiussss` | 主页302跳转(支持多url, url之间使用`,`或 换行 作间隔, 小白别用) |
+| URL | `https://t.me/CMLiussss` | 主页伪装(支持多url, url之间使用`,`或 换行 作间隔, 乱设容易触发反诈) |
+| CFEMAIL | `admin@gmail.com` | CF账户邮箱(与`CFKEY`都填上后, 订阅信息将显示请求使用量, 小白别用) | 
+| CFKEY | `c6a944b5c956b6c18c2352880952bced8b85e` | CF账户Global API Key(与`CFEMAIL`都填上后, 订阅信息将显示请求使用量, 小白别用) |
 
 **注意: 填入`SOCKS5`后将不再启用`PROXYIP`！请二选一使用！！！**
 
@@ -193,4 +193,4 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 [![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
 
 # 感谢
-[ca110us](https://github.com/ca110us/epeius)、[xream](https://github.com/xream)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、<a href="https://alice.ws/aff.php?aff=15"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" width="150" height="75" alt="Alice Networks LTD"/></a>、
+[ca110us](https://github.com/ca110us/epeius)、[xream](https://github.com/xream)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、<a href="https://url.cmliussss.com/alice"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" width="150" height="75" alt="Alice Networks LTD"/></a>、
